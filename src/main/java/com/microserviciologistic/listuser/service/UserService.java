@@ -24,11 +24,11 @@ public class UserService {
         try {
             List<User> users = userRepository.findAll();
             if (users.isEmpty()) {
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No se encontraron usuarios");
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found users");
             }
             return users;
         } catch (DataAccessException e) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error de conexión a la base de datos: " + e.getMessage(), e);
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error to connection with database: " + e.getMessage(), e);
         }
     }
 

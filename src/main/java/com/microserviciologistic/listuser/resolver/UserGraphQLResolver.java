@@ -26,7 +26,7 @@ public class UserGraphQLResolver {
             List<User> users = userService.getAllUsers();
 
             if (users.isEmpty()) {
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No se encontraron usuarios");
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found users");
             }
 
             return users;
@@ -36,7 +36,7 @@ public class UserGraphQLResolver {
         } catch (Exception e) {
             throw new ResponseStatusException(
                     HttpStatus.INTERNAL_SERVER_ERROR,
-                    "Error inesperado al recuperar los usuarios: " + e.getMessage(), e
+                    "Error unexpected to recovering users: " + e.getMessage(), e
             );
         }
     }
