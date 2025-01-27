@@ -1,14 +1,14 @@
 package com.microserviciologistic.listuser.model;
 
-
 import jakarta.persistence.*;
+import java.util.UUID;
 
 @Entity(name = "user")
 public class User {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(columnDefinition = "BINARY(16)", unique = true, nullable = false)
+    private UUID id;
 
     @Column(nullable = false)
     private String name;
@@ -28,11 +28,11 @@ public class User {
     @Column(nullable = false)
     private String rol;
 
-    public Long getId() {
-        return id;
+    public UUID getId() {
+        return id;  // Cambia de Long a UUID
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
