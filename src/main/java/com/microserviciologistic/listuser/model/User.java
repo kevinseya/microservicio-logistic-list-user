@@ -26,7 +26,12 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    private String rol;
+    private String role;
+
+    @Column(nullable = false)
+    private Boolean active = true;
+
+
 
     public UUID getId() {
         return id;  // Cambia de Long a UUID
@@ -82,11 +87,16 @@ public class User {
     }
 
     // Getter y Setter para rol
-    public String getRol() {
-        return rol;
+    public String getRole() {
+        return role;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
+    public void setRol(String role) {
+        this.role = role;
     }
+
+    //Getter y Setter para active
+    public Boolean getActive() { return active; }
+
+    public void setActive(Boolean active) { this.active = active; }
 }

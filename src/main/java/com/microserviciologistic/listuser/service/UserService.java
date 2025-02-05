@@ -22,7 +22,7 @@ public class UserService {
 
     public List<User> getAllUsers() {
         try {
-            List<User> users = userRepository.findAll();
+            List<User> users = userRepository.findAllByActiveTrue();
             if (users.isEmpty()) {
                 throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Not Found users");
             }

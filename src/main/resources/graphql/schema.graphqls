@@ -8,5 +8,5 @@ type User {
     lastname: String!
     email: String!
     phone: String!
-    rol: String!
+    role: String!
 }
