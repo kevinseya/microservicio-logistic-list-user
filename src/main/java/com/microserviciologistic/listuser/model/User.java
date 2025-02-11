@@ -91,7 +91,7 @@ public class User {
         return role;
     }
 
-    public void setRol(String role) {
+    public void setRole(String role) {
         this.role = role;
     }
 
