@@ -1,5 +1,6 @@
 package com.microserviciologistic.listuser.model;
 
+import com.microserviciologistic.listuser.service.UUIDConverter;
 import jakarta.persistence.*;
 import java.util.UUID;
 
@@ -8,6 +9,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(columnDefinition = "BINARY(16)", unique = true, nullable = false)
+    @Convert(converter = UUIDConverter.class)  // Agrega el conversor aquí
     private UUID id;
 
     @Column(nullable = false)
